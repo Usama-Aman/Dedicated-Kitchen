@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.CardModel" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.PaymentMethodsAdapter" />
+
+        <variable
+            name="showToggle"
+            type="Boolean" />
+
+        <variable
+            name="showDelete"
+            type="Boolean" />
+
+        <variable
+            name="fromPaymentMethodsActivity"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dimen_5"
+        android:background="@drawable/choose_location_item_bg"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{()-> adapter.itemTapped(position)}"
+        android:paddingHorizontal="@dimen/dimen_15"
+        android:paddingVertical="@dimen/dimen_10">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_address_icon"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="@{`**** **** **** `+source.card_last_four}"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_selected_tick"
+            app:layout_constraintStart_toEndOf="@+id/iv_address_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RadioButton
+            android:id="@+id/rbSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:clickable="@{fromPaymentMethodsActivity}"
+            android:enabled="@{fromPaymentMethodsActivity}"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:onClick="@{()-> adapter.makeCardDefault(position)}"
+            android:textColor="@color/lightGraySubTitleColor"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_selected_tick"
+            app:layout_constraintStart_toEndOf="@+id/iv_address_icon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_selected_tick"
+            android:layout_width="@dimen/dimen_40"
+            android:layout_height="@dimen/dimen_40"
+            android:padding="10dp"
+            android:visibility="@{source.selected &amp;&amp; showToggle ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_checked_tick" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="@dimen/dimen_40"
+            android:layout_height="@dimen/dimen_40"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{()-> adapter.deleteTapped(position)}"
+            android:padding="10dp"
+            android:visibility="@{showDelete ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_delete" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

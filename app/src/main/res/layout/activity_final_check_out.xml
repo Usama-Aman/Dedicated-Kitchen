@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grayBgColor">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back_arrow"
+            android:layout_width="@dimen/app_back_arrow_width"
+            android:layout_height="@dimen/app_back_arrow_height"
+            android:padding="@dimen/app_back_arrow_padding"
+            android:tint="@color/bottomTabSelectedColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/tahoma_bold"
+            android:gravity="center"
+            android:text="Payment Methods"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_back_arrow" />
+
+
+        <ImageView
+            android:id="@+id/iv_payment_icon"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:src="@drawable/dark_circle_bg"
+            app:layout_constraintEnd_toEndOf="@+id/tv_payment"
+            app:layout_constraintStart_toStartOf="@+id/tv_payment"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back_arrow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_payment"
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_30"
+            android:gravity="center"
+            android:text="Payment"
+            app:layout_constraintEnd_toStartOf="@+id/l_margin"
+            app:layout_constraintTop_toBottomOf="@+id/iv_payment_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/l_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/r_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <ImageView
+            android:id="@+id/iv_checkout_icon"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            android:src="@drawable/dark_circle_bg"
+            app:layout_constraintEnd_toEndOf="@+id/tv_checkout"
+            app:layout_constraintStart_toStartOf="@+id/tv_checkout"
+            app:layout_constraintTop_toTopOf="@+id/iv_payment_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_checkout"
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_30"
+            android:gravity="center"
+            android:text="Checkout"
+            app:layout_constraintStart_toEndOf="@+id/r_margin"
+            app:layout_constraintTop_toBottomOf="@+id/iv_checkout_icon" />
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_payment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/empty_data_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@android:color/transparent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_empty_data_icon"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_100"
+            app:layout_constraintBottom_toTopOf="@+id/middle_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/middle_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_empty_data_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/middle_margin" />
+
+
+        <TextView
+            android:id="@+id/tv_empty_data_add_item_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dimen_5"
+            android:textColor="@color/lightGraySubTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_empty_data_title" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:fillViewport="true">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_my_bag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="Choose Payment Method"
+            android:textColor="@color/cartTitleColor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_back_arrow" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back_arrow"
+            android:layout_width="@dimen/app_back_arrow_width"
+            android:layout_height="@dimen/app_back_arrow_height"
+            android:padding="@dimen/app_back_arrow_padding"
+            android:tint="@color/bottomTabSelectedColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_goto_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:padding="@dimen/dimen_10"
+            android:tint="#F19D5D"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_my_bag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_my_bag"
+            app:srcCompat="@drawable/ic_home" />
+
+
+        <ImageView
+            android:id="@+id/iv_payment_icon"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:src="@drawable/ic_circle_selected_tab"
+            app:layout_constraintEnd_toEndOf="@+id/tv_payment"
+            app:layout_constraintStart_toStartOf="@+id/tv_payment"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back_arrow" />
+
+        <View
+            android:id="@+id/middle_sep"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_payment_icon"
+            app:layout_constraintEnd_toStartOf="@+id/r_margin"
+            app:layout_constraintStart_toEndOf="@+id/l_margin"
+            app:layout_constraintTop_toTopOf="@+id/iv_payment_icon" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_payment"
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_30"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Payment"
+            android:textColor="@color/productPriceGreenColor"
+            app:layout_constraintEnd_toStartOf="@+id/l_margin"
+            app:layout_constraintTop_toBottomOf="@+id/iv_payment_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/l_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/r_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <ImageView
+            android:id="@+id/iv_checkout_icon"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_circle_un_selected_tab"
+            app:layout_constraintEnd_toEndOf="@+id/tv_checkout"
+            app:layout_constraintStart_toStartOf="@+id/tv_checkout"
+            app:layout_constraintTop_toTopOf="@+id/iv_payment_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_checkout"
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_30"
+            android:fontFamily="sans-serif-condensed-light"
+            android:gravity="center"
+            android:text="Checkout"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/r_margin"
+            app:layout_constraintTop_toBottomOf="@+id/iv_checkout_icon" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_payment">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/auth_user_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/wallet_payment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_15"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:foreground="?android:selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/dimen_10"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_payment">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_available_credits"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dimen_10">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_start_icon"
+                                android:layout_width="@dimen/dimen_35"
+                                android:layout_height="@dimen/dimen_35"
+                                android:padding="@dimen/dimen_5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_dollar_bg" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_sub_section_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/dimen_15"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:text="Dedicate Account"
+                                android:textColor="@color/darkGrayTitleColor"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toStartOf="@+id/iv_end_icon"
+                                app:layout_constraintStart_toEndOf="@+id/iv_start_icon"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_account_balance"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/dimen_15"
+                                android:layout_marginTop="@dimen/dimen_2"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:text="0.0"
+                                android:textColor="@color/lightGraySubTitleColor"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toStartOf="@+id/iv_selected_tick"
+                                app:layout_constraintStart_toEndOf="@+id/iv_start_icon"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_sub_section_title" />
+
+                            <ProgressBar
+                                android:id="@+id/loading_icon"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginHorizontal="@dimen/dimen_15"
+                                android:layout_marginTop="@dimen/dimen_2"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:text="0.0"
+                                android:textColor="@color/lightGraySubTitleColor"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toEndOf="@+id/iv_start_icon"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_sub_section_title" />
+
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_selected_tick"
+                                android:layout_width="12dp"
+                                android:layout_height="11dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_checked_tick" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_your_cards"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_10"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:text="Your Cards"
+                        android:textColor="@color/darkGrayTitleColor"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/wallet_payment" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_10"
+                        android:layout_marginTop="@dimen/dimen_15"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_your_cards"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/single_location_item" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/tv_no_card_view"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_add_another"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_your_cards">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_card"
+                            android:layout_width="@dimen/dimen_80"
+                            android:layout_height="@dimen/dimen_80"
+                            android:layout_marginTop="@dimen/dimen_30"
+                            android:background="@drawable/ic_gift"
+                            android:padding="@dimen/dimen_25"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_golden_card" />
+
+                        <TextView
+                            android:id="@+id/tv_dont_have_card"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dimen_15"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:gravity="center"
+                            android:text="@string/dont_have_card"
+                            android:textColor="@color/darkGrayTitleColor"
+                            android:textSize="24sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/iv_card" />
+
+                        <TextView
+                            android:id="@+id/tv_dont_have_card_message"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dimen_25"
+                            android:layout_marginTop="@dimen/dimen_10"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:gravity="center"
+                            android:text="@string/dont_have_card_message"
+                            android:textColor="@color/lightGraySubTitleColor"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_dont_have_card" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_add_first_card"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dimen_45"
+                            android:layout_marginHorizontal="@dimen/dimen_25"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/productPriceGreenColor"
+                            app:cardCornerRadius="@dimen/dimen_16"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_dont_have_card_message">
+
+                            <TextView
+                                android:id="@+id/tv_add_first_card"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:gravity="center"
+                                android:text="@string/add_card"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </androidx.cardview.widget.CardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include layout="@layout/empty_data_container" />
+
+                    <TextView
+                        android:id="@+id/tv_add_another"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_10"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:paddingVertical="@dimen/dimen_10"
+                        android:text="Add New Payment Method"
+                        android:textColor="@color/seeAllLabelColor"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_address" />
+
+
+                    <!--  Tips Section (Start) -->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_give_tip"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_10"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:text="Want to give a tip?"
+                        android:textColor="@color/darkGrayTitleColor"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_add_another" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_tip_buttons"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_give_tip"
+                        app:layout_constraintStart_toStartOf="@+id/tv_give_tip"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_give_tip">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/rb_tip_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Yes" />
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/rb_tip_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_20"
+                            android:text="No" />
+
+                    </RadioGroup>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_percentage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/google_pay_btn_bg"
+                        android:backgroundTint="@color/separatorColor"
+                        android:fontFamily="@font/sf_pro_display_light"
+                        android:hint="Percentage"
+                        android:inputType="numberDecimal"
+                        android:paddingVertical="@dimen/dimen_15"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:textColorHint="@color/grayAppTextColor"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_or"
+                        app:layout_constraintStart_toStartOf="@+id/rg_tip_buttons"
+                        app:layout_constraintTop_toBottomOf="@+id/rg_tip_buttons" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_or"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:text="OR"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/et_percentage"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/et_percentage" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_amount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/google_pay_btn_bg"
+                        android:backgroundTint="@color/separatorColor"
+                        android:fontFamily="@font/sf_pro_display_light"
+                        android:hint="Amount"
+                        android:inputType="numberDecimal"
+                        android:paddingVertical="@dimen/dimen_15"
+
+                        android:paddingStart="@dimen/_10sdp"
+                        android:textColorHint="@color/grayAppTextColor"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="@+id/wallet_payment"
+                        app:layout_constraintStart_toEndOf="@+id/tv_or"
+                        app:layout_constraintTop_toTopOf="@+id/et_percentage" />
+
+                    <!--  Tips Section (End) -->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_guest_checkout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="@dimen/dimen_10"
+                    android:layout_marginTop="@dimen/_10sdp"
+           >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title_fname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_15"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="Full Name"
+                        android:textColor="@color/accountSectionLabelColor"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_name"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_15"
+                        android:background="@drawable/google_pay_btn_bg"
+                        android:backgroundTint="@color/separatorColor"
+                        android:fontFamily="@font/sf_pro_display_light"
+                        android:hint="Enter Name"
+                        android:paddingHorizontal="@dimen/dimen_15"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title_fname" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_15"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="Email Address"
+                        android:textColor="@color/accountSectionLabelColor"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_email"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_15"
+                        android:background="@drawable/google_pay_btn_bg"
+                        android:backgroundTint="@color/separatorColor"
+                        android:fontFamily="@font/sf_pro_display_light"
+                        android:hint="Enter Email"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="@dimen/dimen_15"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title_email" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_15"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="Phone Number"
+                        android:textColor="@color/accountSectionLabelColor"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_15"
+                        android:background="@drawable/google_pay_btn_bg"
+                        android:backgroundTint="@color/separatorColor"
+                        android:fontFamily="@font/sf_pro_display_light"
+                        android:hint="Enter Phone Number"
+                        android:inputType="phone"
+                        android:maxLength="15"
+                        android:paddingHorizontal="@dimen/dimen_15"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title_phone" />
+
+                    <TextView
+                        android:id="@+id/tv_card_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/dimen_25"
+                        android:layout_marginStart="@dimen/app_back_arrow_padding"
+                        android:layout_marginEnd="@dimen/app_back_arrow_padding"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="Card Info"
+                        android:textColor="@color/cartTitleColor"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_full_name"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_15"
+                        android:background="@drawable/google_pay_btn_bg"
+                        android:backgroundTint="@color/separatorColor"
+                        android:fontFamily="@font/sf_pro_display_light"
+                        android:gravity="center_vertical"
+                        android:hint="@string/card_holder_name"
+                        android:paddingHorizontal="@dimen/dimen_15"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_card_title" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_card_number"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dimen_45"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_marginVertical="@dimen/dimen_15"
+                        android:layout_marginTop="@dimen/dimen_15"
+                        android:background="@drawable/google_pay_btn_bg"
+                        android:backgroundTint="@color/separatorColor"
+                        android:drawableStart="@drawable/ic_payment_info_dim"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:hint="  xxxx xxxx xxxx 0000"
+                        android:inputType="number"
+                        android:maxLength="16"
+                        android:paddingHorizontal="@dimen/dimen_15"
+                        android:paddingStart="@dimen/dimen_15"
+                        android:paddingEnd="@dimen/dimen_15"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grayAppTextColor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_full_name" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_month_year"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dimen_45"
+                        android:layout_marginTop="@dimen/dimen_15"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:background="@drawable/google_pay_btn_bg"
+                        android:backgroundTint="@color/separatorColor"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:gravity="center_vertical"
+                        android:hint="@string/mm_yy"
+                        android:paddingStart="@dimen/dimen_15"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@+id/et_cvc"
+                        app:layout_constraintStart_toStartOf="@+id/et_card_number"
+                        app:layout_constraintTop_toBottomOf="@+id/et_card_number" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_cvc"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dimen_45"
+                        android:layout_marginStart="@dimen/dimen_10"
+                        android:layout_marginTop="@dimen/dimen_15"
+                        android:background="@drawable/google_pay_btn_bg"
+                        android:backgroundTint="@color/separatorColor"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:hint="CVC"
+                        android:inputType="numberPassword"
+                        android:maxLength="3"
+                        android:paddingStart="@dimen/dimen_15"
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="@+id/et_card_number"
+                        app:layout_constraintStart_toEndOf="@+id/tv_month_year"
+                        app:layout_constraintTop_toBottomOf="@+id/et_card_number" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_continue_check_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginHorizontal="@dimen/dimen_40"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/productPriceGreenColor"
+                    app:cardCornerRadius="@dimen/dimen_16">
+
+                    <TextView
+                        android:id="@+id/tv_add_to_bag"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:gravity="center"
+                        android:text="@string/continue_label"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+
+</layout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pull_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+
+            <LinearLayout
+                android:id="@+id/ll_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_15"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/dimen_15"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/gray_button_round"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen_5"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_email_icon"
+                    android:layout_width="@dimen/dimen_30"
+                    android:layout_height="@dimen/dimen_30"
+                    android:layout_marginStart="@dimen/dimen_5"
+                    android:padding="@dimen/dimen_8"
+                    android:src="@drawable/search_icon" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:hint="Search Items"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grayAppTextColor"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/iv_cross"
+                    android:layout_width="@dimen/dimen_30"
+                    android:layout_height="@dimen/dimen_30"
+                    android:layout_marginStart="@dimen/dimen_5"
+                    android:padding="@dimen/dimen_8"
+                    android:src="@drawable/ic_remove"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_orders"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_search"
+                app:spanCount="@integer/products_span_count"
+                tools:itemCount="10"
+                tools:listitem="@layout/single_order_item"
+
+                />
+
+            <ProgressBar
+                android:id="@+id/pb_loader"
+                android:layout_width="@dimen/dimen_50"
+                android:layout_height="@dimen/dimen_50"
+                android:indeterminateOnly="true"
+                android:indeterminateTint="@color/appColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_no_order"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_10"
+                android:drawableTop="@drawable/ic_no_orders"
+                android:drawablePadding="@dimen/dimen_10"
+                android:drawableTint="@color/ingredientColor"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:text="No Orders Found!"
+                android:textColor="@color/ingredientColor"
+                android:textSize="@dimen/dimen_20"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

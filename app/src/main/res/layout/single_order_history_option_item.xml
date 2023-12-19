@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.order.OrderHistoryOptionsAdapter" />
+
+        <variable
+            name="model"
+            type="com.codingpixel.dedicatekitchen.models.ExtraItemOrderModel" />
+
+        <variable
+            name="position"
+            type="int" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dimen_5">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_option_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display_light"
+            android:text="@{model.name}"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_option_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_option_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display_light"
+            android:text="@{model.getFormattedPrice}"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/grayAppTextColor"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_option_name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

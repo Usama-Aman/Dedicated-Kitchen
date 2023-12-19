@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/top_bar_back_arrow_width"
+            android:layout_height="@dimen/top_bar_back_arrow_height"
+            android:padding="@dimen/top_bar_back_arrow_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+        <TextView
+            android:id="@+id/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/sf_pro_display_semibold"
+            android:gravity="center"
+            android:text="Meal Prep Menu"
+            android:background="@color/appColor"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            app:tabGravity="fill"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:elevation="@dimen/dimen_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_heading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tabIndicatorColor="@color/appColor"
+            app:tabIndicatorFullWidth="true"
+            app:tabIndicatorHeight="@dimen/dimen_2"
+            app:tabMode="fixed"
+            app:tabRippleColor="@color/appColor"
+            app:tabSelectedTextColor="@color/appColor"
+            app:tabTextAppearance="@style/MyCustomTabTextAppearance"
+            app:tabTextColor="@color/black">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Pre-Build Meals" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom Meal Prep" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

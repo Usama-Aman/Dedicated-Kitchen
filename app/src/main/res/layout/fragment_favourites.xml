@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pull_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_my_orders"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="@dimen/dimen_3"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:gravity="center"
+                android:paddingVertical="@dimen/dimen_20"
+                android:text="Favorite Products"
+                android:textColor="@color/darkGrayTitleColor"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_back_arrow"
+                android:layout_width="@dimen/app_back_arrow_width"
+                android:layout_height="@dimen/app_back_arrow_height"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:padding="@dimen/app_back_arrow_padding"
+                android:tint="@color/bottomTabSelectedColor"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_my_orders"
+                app:srcCompat="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:id="@+id/tv_forgot_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="Favorite Products"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_back_arrow" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_fav_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
+
+<!--                            android:drawableTop="@drawable/ic_no_favourite"
+                android:drawableTint="@color/ingredientColor"
+
+-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_no_data_found"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:textSize="@dimen/dimen_20"
+                android:visibility="gone"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:text="You currently haven’t selected any favourites"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:textColor="@color/ingredientColor"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grayBgColor">
+
+        <TextView
+            android:id="@+id/tv_my_orders"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/dimen_3"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dimen_20"
+            android:text="@string/bottom_menu_my_orders"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="21sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout_orders"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_40"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@drawable/tab_rounded_bg"
+            android:elevation="@dimen/dimen_2"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my_orders"
+            app:tabIndicator="@drawable/custom_tab_indicator"
+            app:tabIndicatorColor="@color/bottomTabSelectedColor"
+            app:tabIndicatorGravity="stretch"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            app:tabTextColor="@color/unSelectedTabColor">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/all_orders" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/history" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout_orders" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

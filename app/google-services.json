@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "659267534822",
+    "project_id": "dedicatekitchen",
+    "storage_bucket": "dedicatekitchen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659267534822:android:5c4c541a8b5f5016f92027",
+        "android_client_info": {
+          "package_name": "com.codingpixel.dedicatekitchen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659267534822-j94kcgnto3lk8tnv6p3eil7q4mc18fmo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWgSMqwnXDuU8uVMxIQ0sCcBwW7h59QJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659267534822-j94kcgnto3lk8tnv6p3eil7q4mc18fmo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

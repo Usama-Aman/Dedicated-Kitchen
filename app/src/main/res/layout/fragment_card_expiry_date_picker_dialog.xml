@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/dimen_20"
+            android:background="@drawable/white_rounded_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/dimen_10">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:gravity="center"
+                android:text="@string/expire_date"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:text="MM"
+                android:textColor="@color/darkGrayTitleColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/tv_year"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:text="YY"
+                android:textColor="@color/darkGrayTitleColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_month"
+                app:layout_constraintTop_toTopOf="@+id/tv_month" />
+
+            <NumberPicker
+                android:id="@+id/np_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:divider="@color/appColor"
+                app:layout_constraintEnd_toEndOf="@+id/tv_month"
+                app:layout_constraintStart_toStartOf="@+id/tv_month"
+                app:layout_constraintTop_toBottomOf="@+id/tv_month" />
+
+            <NumberPicker
+                android:id="@+id/np_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:divider="@color/appColor"
+                app:layout_constraintEnd_toEndOf="@+id/tv_year"
+                app:layout_constraintStart_toStartOf="@+id/tv_year"
+                app:layout_constraintTop_toBottomOf="@+id/tv_year" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_done"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_45"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_marginHorizontal="@dimen/dimen_30"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/productPriceGreenColor"
+                app:cardCornerRadius="@dimen/dimen_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/np_year">
+
+                <TextView
+                    android:id="@+id/tv_add_to_bag"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:gravity="center"
+                    android:text="@string/done"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+</layout>

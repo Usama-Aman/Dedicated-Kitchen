@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.ItemData" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.order.OrderHistoryItemAdapter" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_7"
+        android:background="@drawable/white_rounded_bg"
+        android:elevation="@dimen/dimen_3"
+        android:foreground="?android:selectableItemBackgroundBorderless"
+        android:paddingVertical="@dimen/dimen_15">
+
+        <com.codingpixel.dedicatekitchen.customwidgets.RoundedImageView
+            android:id="@+id/iv_item"
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="@dimen/dimen_50"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:cornerRadius="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_meal_prep_section_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_meal_prep_section_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="start"
+            android:text="@{source.name}"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_item"
+            app:layout_constraintTop_toTopOf="@+id/iv_item" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_meal_prep_section_sub_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="start"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_item"
+            app:layout_constraintTop_toBottomOf="@+id/tv_meal_prep_section_title" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/separatorColor"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_item" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ingredients"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:animateLayoutChanges="false"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator"
+            tools:itemCount="3"
+            tools:listitem="@layout/single_order_history_option_item" />
+
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_ingredients" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/sf_pro_display_light"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/rv_ingredients"
+            app:layout_constraintTop_toBottomOf="@+id/separator2" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

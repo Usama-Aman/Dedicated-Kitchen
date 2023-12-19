@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.PricingAdapter" />
+
+        <variable
+            name="model"
+            type="com.codingpixel.dedicatekitchen.models.PackageModel" />
+
+        <variable
+            name="position"
+            type="int" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen_10"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_plan_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dimen_5"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="@{model.name}"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_dollar"
+                    android:layout_width="@dimen/dimen_15"
+                    android:layout_height="@dimen/dimen_20"
+                    android:layout_marginHorizontal="@dimen/dimen_5"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_plan_price"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_plan_price"
+                    app:layout_constraintTop_toTopOf="@+id/tv_plan_price"
+                    app:srcCompat="@drawable/ic_dollar_sign" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_plan_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_30"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:background="@drawable/bg"
+                    android:drawableTint="@color/black"
+                    android:drawableEnd="@drawable/ic_dropdown"
+                    android:drawablePadding="@dimen/dimen_15"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->adapter.amountTapped(position)}"
+                    android:paddingHorizontal="@dimen/dimen_30"
+                    android:text="@{model.text}"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_plan_name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/google_pay_btn_bg"
+                    android:backgroundTint="#FF9855"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/dimen_7"
+                    android:text="@{model.offer}"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_package_detail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_plan_price" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_package_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_16"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:lineSpacingExtra="@dimen/dimen_6"
+                    android:text="@{model.detail}"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_last_bought_credit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_offer" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_last_bought_credit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_16"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/sf_pro_display_bold"
+                    android:lineSpacingExtra="@dimen/dimen_6"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toTopOf="@+id/cv_check_out"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_package_detail" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_check_out"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginHorizontal="@dimen/dimen_40"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginBottom="@dimen/dimen_15"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/productPriceGreenColor"
+                    app:cardCornerRadius="@dimen/dimen_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_last_bought_credit">
+
+                    <TextView
+                        android:id="@+id/tv_add_to_bag"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:gravity="center"
+                        android:onClick="@{()->adapter.itemTapped(position)}"
+                        android:text="buy plan"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

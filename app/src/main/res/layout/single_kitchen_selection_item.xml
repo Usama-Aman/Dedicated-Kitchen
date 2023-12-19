@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.DedicateKitchen" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="listener"
+            type="com.codingpixel.dedicatekitchen.interfaces.ItemClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:onClick="@{() -> listener.itemClicked(position)}"
+        android:padding="@dimen/dimen_5">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_dedicate_eagle_ridge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_with_border"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dimen_15"
+            android:text="@{source.name}"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

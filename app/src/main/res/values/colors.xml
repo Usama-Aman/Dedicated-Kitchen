@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#243651</color>
+    <color name="colorPrimaryDark">#96C13D</color>
+    <color name="colorAccent">#96C13D</color>
+    <color name="textColorSecondary">@color/bottomTabUnSelectedColor</color>
+
+
+    <color name="appColor">#96C13D</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="greenFieldSolidBgColor">#63ffffff</color>
+    <color name="greenFieldStrokeColor">#66ffffff</color>
+
+    <color name="productPriceGreenColor">#99C400</color>
+    <color name="editFieldBgColor">#63FFFFFF</color>
+    <color name="unSelectedDotIndicator">#4DFFFFFF</color>
+    <color name="selectedDotIndicator">#FFFFFF</color>
+
+    <color name="googleButtonBgColor">#4285F4</color>
+    <color name="facebookButtonBgColor">#4460A0</color>
+
+    <color name="darkGrayLabelColor">#4F585E</color>
+    <color name="darkLightGrayLabelColor">#B34F585E</color>
+
+    <color name="signInLabelColor">#F6F6F6</color>
+
+    <color name="dontHaveAccountLabelColor">#8AFFFFFF</color>
+
+    <color name="bottomBarBgColor">#F0F0F0</color>
+
+    <color name="bottomTabSelectedColor">#243651</color>
+    <color name="bottomTabUnSelectedColor">#99243651</color>
+
+    <color name="grayBgColor">#F9FAFB</color>
+    <color name="darkGrayTitleColor">#172B4D</color>
+
+    <color name="lightRed">#FFEBE5</color>
+    <color name="promoCodeStroke">#FFBDAD</color>
+    <color name="promoCodeRed">#DE350B</color>
+    <color name="redColor">#D0021B</color>
+
+    <color name="separatorColor">#F4F5F7</color>
+    <color name="lightGraySubTitleColor">#7A869A</color>
+
+    <color name="unSelectedTabColor">#8F99A8</color>
+    <color name="black">#000000</color>
+
+    <color name="orderTitleColor">#99000521</color>
+    <color name="orderLabelsColor">#000521</color>
+    <color name="orderPendingColor">#80FE6E00</color>
+    <color name="orderInProgressColor">#FE6E00</color>
+    <color name="orderCompletedColor">#40B25E</color>
+    <color name="orderCancelledColor">#DF4242</color>
+
+    <color name="lightGrayColor">#D8D8D8</color>
+    <color name="contentDescriptionColor">#999999</color>
+    <color name="bigTitlesColor">#03201F</color>
+    <color name="seeAllLabelColor">#4A90E2</color>
+    <color name="productDesciptionColor">#6F7383</color>
+    <color name="ingredientColor">#1D2125</color>
+    <color name="ingredientInfoColor">#991D2125</color>
+    <color name="cartTitleColor">#464646</color>
+    <color name="totalColor">#B8000000</color>
+    <color name="coupan_code_color">#BFBFBF</color>
+    <color name="grayFieldColor">#4DDBDFE3</color>
+    <color name="dimBlack">#0D000000</color>
+    <color name="orderPlacedMessageColor">#8D92A3</color>
+    <color name="accountSectionLabelColor">#C1C7D0</color>
+    <color name="grayFieldHintcolor">#807A869A</color>
+
+    <color name="unSelectedFilterColor">#F1F3F6</color>
+    <color name="greenBgFieldsHintColor">#99FFFFFF</color>
+
+    <color name="unCheckedToggleGrayColor">#F0F0F0</color>
+    <color name="greyTextColor">#707070</color>
+    <color name="hint">#969696</color>
+    <color name="gray">#EEF0F1</color>
+    <color name="hintColorGray">#4a4a4a</color>
+    <color name="transparent">#00000000</color>
+    <color name="grayAppTextColor">#9B9B9B</color>
+    <color name="red">#F82735</color>
+
+
+</resources>

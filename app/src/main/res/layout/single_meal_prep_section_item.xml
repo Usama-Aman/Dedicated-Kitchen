@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.ExtraOptionsModel" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.mealprep.MealPrepSectionAdapter" />
+
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_7"
+        android:elevation="@dimen/dimen_3"
+        android:foreground="?selectableItemBackgroundBorderless"
+        app:cardCornerRadius="@dimen/dimen_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@{source.showSubMenu ? @drawable/green_header_top_15dp : @drawable/green_header_15dp}"
+                android:onClick="@{()-> adapter.headerTap(position)}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_select_one"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_meal_prep_section_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_7"
+                android:layout_marginEnd="@dimen/dimen_5"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:gravity="start"
+                android:text="@{source.name}"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:paddingTop="@dimen/dimen_7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_arrow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_select_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_7"
+                android:layout_marginEnd="@dimen/dimen_5"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="start"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:paddingTop="@dimen/dimen_2"
+                android:paddingBottom="@dimen/dimen_7"
+                app:layout_constraintStart_toEndOf="@+id/iv_arrow"
+                app:layout_constraintTop_toBottomOf="@+id/tv_meal_prep_section_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/steric"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/dimen_5"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="top"
+                android:text="*"
+                android:textColor="@color/redColor"
+                android:textSize="22sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_select_one"
+                app:layout_constraintStart_toEndOf="@+id/tv_select_one"
+                app:layout_constraintTop_toTopOf="@+id/tv_select_one" />
+
+            <!--                android:visibility="@{source.showSubMenu ? View.VISIBLE : View.GONE}"
+-->
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@color/separatorColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_select_one" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_arrow"
+                android:layout_width="@dimen/dimen_30"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/dimen_15"
+                android:padding="@dimen/dimen_5"
+                android:src="@{source.showSubMenu ? @drawable/ic_item_minu : @drawable/ic_item_plus}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_select_one"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_meal_prep_section_title" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_ingredients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="false"
+                android:orientation="vertical"
+                android:visibility="@{source.showSubMenu ? View.VISIBLE : View.GONE}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/dimen_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_select_one"
+                tools:itemCount="3"
+                android:paddingBottom="@dimen/dimen_10"
+                tools:listitem="@layout/single_meal_prep_sub_section_item" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

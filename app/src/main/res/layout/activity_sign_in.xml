@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appColor"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_back_arrow"
+                android:layout_width="@dimen/app_back_arrow_width"
+                android:layout_height="@dimen/app_back_arrow_height"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:padding="@dimen/app_back_arrow_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:id="@+id/tv_sign_in"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="@string/sign_in"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_back_arrow" />
+
+            <TextView
+                android:id="@+id/tv_dont_have_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="@string/dont_have_account"
+                android:textColor="@color/dontHaveAccountLabelColor"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sign_in" />
+
+            <TextView
+                android:id="@+id/tv_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:paddingStart="@dimen/dimen_5"
+                android:paddingEnd="@dimen/dimen_20"
+                android:text="Click here to Register"
+                android:textColor="@color/darkGrayTitleColor"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/tv_dont_have_account"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sign_in" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_40"
+                android:background="@drawable/green_edit_field_bg"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:paddingVertical="@dimen/dimen_15"
+                android:paddingStart="@dimen/dimen_15"
+                android:textColor="@color/white"
+                android:textColorHint="@color/greenBgFieldsHintColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_sign_in"
+                app:layout_constraintStart_toStartOf="@+id/tv_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dont_have_account" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/tv_sign_in"
+                app:layout_constraintStart_toStartOf="@+id/tv_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/et_email"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/white">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/green_edit_field_bg"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="@dimen/dimen_15"
+                    android:paddingVertical="@dimen/dimen_15"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/greenBgFieldsHintColor"
+                    android:textSize="16sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/tv_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dimen_25"
+                android:paddingVertical="@dimen/dimen_10"
+                android:text="@string/forgot_password"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_sign_in"
+                app:layout_constraintStart_toStartOf="@+id/tv_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/til_password" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_sign_in"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_45"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/darkGrayLabelColor"
+                app:cardCornerRadius="@dimen/dimen_16"
+                app:layout_constraintEnd_toEndOf="@+id/tv_sign_in"
+                app:layout_constraintStart_toStartOf="@+id/tv_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:gravity="center"
+                    android:text="@string/sign_in"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dimen_25"
+                android:paddingVertical="@dimen/dimen_10"
+                android:text="@string/continue_as_guests_underlined"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_sign_in"
+                app:layout_constraintStart_toStartOf="@+id/tv_sign_in"
+                app:layout_constraintTop_toBottomOf="@+id/cv_sign_in" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/intermediate_logo_width"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:layout_marginBottom="@dimen/dimen_30"
+                android:scaleType="fitEnd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_sign_in"
+                app:srcCompat="@drawable/dhk_salad1"
+
+                />
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:layout_width="@dimen/intermediate_logo_width"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_marginTop="@dimen/dimen_30"-->
+            <!--                android:layout_marginBottom="@dimen/dimen_30"-->
+            <!--                android:scaleType="fitEnd"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/cv_sign_in"-->
+            <!--                app:srcCompat="@drawable/food_plate_bg"-->
+
+            <!--                />-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</layout>

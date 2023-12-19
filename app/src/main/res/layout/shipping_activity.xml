@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grayBgColor">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back_arrow"
+            android:layout_width="@dimen/app_back_arrow_width"
+            android:layout_height="@dimen/app_back_arrow_height"
+            android:padding="@dimen/app_back_arrow_padding"
+            android:tint="@color/bottomTabSelectedColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+        <TextView
+            android:id="@+id/tv_my_bag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/app_back_arrow_padding"
+            android:layout_marginEnd="@dimen/app_back_arrow_padding"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:text="Checkout"
+            android:textColor="@color/cartTitleColor"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back_arrow" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_goto_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:padding="@dimen/dimen_10"
+            android:tint="#F19D5D"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_my_bag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_my_bag"
+            app:srcCompat="@drawable/ic_home" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_delivery"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_20"
+            android:layout_marginStart="@dimen/app_back_arrow_padding"
+            android:background="@drawable/dark_grey_btn"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="@dimen/dimen_10"
+            android:text="Delivery"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my_bag" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_pick_up"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:background="@drawable/dark_grey_btn"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="@dimen/dimen_10"
+            android:text="Take Out"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my_bag" />
+
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dimen_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_delivery">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_take_out"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_select_kitchen_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/app_back_arrow_padding"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:text="Select Kitchen"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <RelativeLayout
+                            android:id="@+id/spinner_select_kitchen"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dimen_45"
+                            android:layout_margin="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/bg"
+                            android:padding="@dimen/dimen_5"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_select_kitchen_heading">
+
+                            <Spinner
+                                android:id="@+id/spinner_kitchen"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:backgroundTint="@color/white"
+                                android:drawSelectorOnTop="true"
+                                android:padding="@dimen/dimen_5"
+                                android:popupBackground="@color/white"
+                                android:theme="@style/mySpinnerItemStyle"
+                                android:visibility="invisible" />
+
+                            <TextView
+                                android:id="@+id/tv_spinner_selected_kitchen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:gravity="center_vertical"
+                                android:hint="@string/choose_your_kitchen"
+                                android:paddingHorizontal="@dimen/_10sdp"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/hintColorGray"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/dimen_20"
+                                android:layout_height="@dimen/dimen_20"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_arrow" />
+
+                        </RelativeLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_meal_prep"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spinner_select_kitchen">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_order_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_back_arrow_padding"
+                                android:layout_marginTop="@dimen/dimen_20"
+                                android:fontFamily="@font/sf_pro_display_bold"
+                                android:text="MealPrep"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_title_delivery_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_back_arrow_padding"
+                                android:layout_marginTop="@dimen/dimen_20"
+                                android:fontFamily="@font/sf_pro_display_bold"
+                                android:text="Delivery address:  "
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_order_type" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_delivery_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_20"
+                                android:layout_marginEnd="@dimen/dimen_10"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:maxLines="2"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/tv_title_delivery_address"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_order_type" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_title_date_and_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_back_arrow_padding"
+                                android:layout_marginTop="@dimen/dimen_20"
+                                android:fontFamily="@font/sf_pro_display_bold"
+                                android:text="TakeOut Date and Time: "
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_delivery_address" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_date_and_time"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_20"
+                                android:layout_marginEnd="@dimen/dimen_10"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:gravity="start"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_edit"
+                                app:layout_constraintStart_toEndOf="@+id/tv_title_date_and_time"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_delivery_address" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_edit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/dimen_15"
+                                android:drawableStart="@drawable/ic_edit_pencil"
+                                android:drawablePadding="@dimen/dimen_5"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:paddingHorizontal="@dimen/_10sdp"
+                                android:text="@string/edit"
+                                android:textColor="@color/seeAllLabelColor"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_date_and_time"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/tv_date_and_time" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_select_pickup_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:text="Pick-Up Time"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cl_meal_prep" />
+
+                        <RelativeLayout
+                            android:id="@+id/spinner_select_pickup_time"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dimen_45"
+                            android:layout_margin="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/bg"
+                            android:padding="@dimen/dimen_5"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_select_pickup_heading">
+
+                            <Spinner
+                                android:id="@+id/spinner_pickup_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:backgroundTint="@color/white"
+                                android:drawSelectorOnTop="true"
+                                android:padding="@dimen/dimen_5"
+                                android:popupBackground="@color/white"
+                                android:theme="@style/mySpinnerItemStyle"
+                                android:visibility="invisible" />
+
+                            <TextView
+                                android:id="@+id/tv_spinner_selected_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:drawablePadding="@dimen/dimen_10"
+                                android:fontFamily="@font/sf_pro_display_regular"
+                                android:gravity="center_vertical"
+                                android:hint="@string/select_pickup_time"
+                                android:paddingHorizontal="@dimen/_10sdp"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/hintColorGray"
+                                android:textSize="12sp"
+                                app:drawableStartCompat="@drawable/ic_pick_up_clock_icon" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/dimen_20"
+                                android:layout_height="@dimen/dimen_20"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_arrow" />
+
+                        </RelativeLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_select_pickup_date_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:text="@string/pick_up_date"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spinner_select_pickup_time" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_pickup_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_45"
+                            android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:background="@drawable/bg"
+                            android:gravity="center_vertical"
+                            android:hint="@string/select_pickup_date"
+                            android:padding="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hintColorGray"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_select_pickup_date_heading" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_order_note_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:hint="@string/order_note"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_pickup_date" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+                            android:layout_marginVertical="@dimen/_10sdp"
+                            android:background="@drawable/bg"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:gravity="top"
+                            android:hint="@string/order_note"
+                            android:maxLength="64"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/dimen_6"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hintColorGray"
+                            android:textSize="15sp"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_order_note_heading" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_first_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:text="@string/first_name"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_last_name"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_pickup_date" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_first_name"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dimen_45"
+                            android:layout_marginStart="@dimen/dimen_20"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:layout_marginEnd="@dimen/dimen_5"
+                            android:background="@drawable/bg"
+                            android:gravity="center_vertical"
+                            android:hint="@string/enter_first_name"
+                            android:paddingHorizontal="20dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hintColorGray"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toStartOf="@+id/et_last_name"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_first_name" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_last_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:text="@string/last_name"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tv_first_name"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_pickup_date" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_last_name"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dimen_45"
+                            android:layout_marginStart="@dimen/dimen_5"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:layout_marginEnd="@dimen/dimen_20"
+                            android:background="@drawable/bg"
+                            android:gravity="center_vertical"
+                            android:hint="@string/enter_last_name"
+                            android:paddingHorizontal="20dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hintColorGray"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/et_first_name"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_first_name" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvSelectGroupTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:text="@string/select_group"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/et_last_name" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvSelectGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_45"
+                            android:layout_marginStart="@dimen/dimen_20"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:layout_marginEnd="@dimen/dimen_20"
+                            android:background="@drawable/bg"
+                            android:gravity="center_vertical"
+                            android:hint="@string/select_group"
+                            android:paddingHorizontal="20dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hintColorGray"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSelectGroupTitle" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_delivery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_20"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_select_delivery_location_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/app_back_arrow_padding"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:text="Choose Delivery Location"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/cl_delivery" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_select_location"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dimen_45"
+                            android:layout_margin="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:background="@drawable/grey_btn"
+                            android:drawableStart="@drawable/ic_location_pin"
+                            android:drawablePadding="@dimen/dimen_10"
+                            android:gravity="center_vertical"
+                            android:hint="Choose Your Kitchen"
+                            android:maxLength="16"
+                            android:paddingHorizontal="@dimen/dimen_15"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_select_delivery_location_heading" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_your_address_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/app_back_arrow_padding"
+                            android:layout_marginTop="@dimen/dimen_20"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:text="Your Addresses"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_select_location" />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dimen_10"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:layout_marginBottom="@dimen/dimen_15"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_your_address_heading"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/single_select_address_item" />
+
+                        <TextView
+                            android:id="@+id/tv_add_another"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10"
+                            android:layout_marginBottom="@dimen/dimen_10"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:paddingHorizontal="@dimen/dimen_20"
+                            android:paddingVertical="@dimen/dimen_10"
+                            android:text="@string/add_another"
+                            android:textColor="@color/seeAllLabelColor"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/rv_address" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </RelativeLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_check_out"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginHorizontal="@dimen/dimen_40"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/productPriceGreenColor"
+                    app:cardCornerRadius="@dimen/dimen_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/main">
+
+                    <TextView
+                        android:id="@+id/tv_add_to_bag"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:gravity="center"
+                        android:text="Continue"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

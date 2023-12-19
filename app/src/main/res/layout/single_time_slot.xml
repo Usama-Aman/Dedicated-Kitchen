@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.TimeSlot" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.TimeSlotsAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{()-> adapter.itemTapped(position)}">
+
+        <TextView
+            android:id="@+id/tv_time_slot"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:gravity="center"
+            android:padding="@dimen/dimen_10"
+            android:text="@{source.slot}"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

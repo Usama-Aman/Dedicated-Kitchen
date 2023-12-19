@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.dashboard.ScanQRCodeActivity">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rewards_bg" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Scan Barcode"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/whiteBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/dimen_20"
+            android:background="@drawable/white_rounded_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <ImageView
+            android:id="@+id/iv_top_logo"
+            android:layout_width="@dimen/intermediate_logo_width"
+            android:layout_height="@dimen/intermediate_logo_height"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:adjustViewBounds="true"
+            android:src="@drawable/dk_gray_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/whiteBox" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_30"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/darkGrayLabelColor"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_top_logo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_30"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <View
+            android:id="@+id/logic"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginBottom="@dimen/dimen_20"
+            android:background="@drawable/ic_green_scanner_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/whiteBox"
+            app:layout_constraintEnd_toEndOf="@+id/whiteBox"
+            app:layout_constraintStart_toStartOf="@+id/whiteBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_card_number"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_bar_code"
+            app:layout_constraintEnd_toEndOf="@+id/logic"
+            app:layout_constraintStart_toStartOf="@+id/logic"
+            app:layout_constraintTop_toTopOf="@+id/logic"
+
+            />
+
+
+        <ImageView
+            android:id="@+id/iv_bar_code"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginVertical="@dimen/dimen_30"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/logic"
+            app:layout_constraintEnd_toEndOf="@+id/logic"
+            app:layout_constraintStart_toStartOf="@+id/logic"
+            app:layout_constraintTop_toTopOf="@+id/logic" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_message"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/dimen_5"
+            android:text="Scan your barcode ,\nEarn Rewards!"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_bar_code"
+            app:layout_constraintEnd_toEndOf="@+id/whiteBox"
+            app:layout_constraintStart_toStartOf="@+id/whiteBox"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

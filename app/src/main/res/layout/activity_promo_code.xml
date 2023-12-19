@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_change_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="@string/refer_and_get_discount"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/title_separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_change_password" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_card"
+            android:layout_width="@dimen/dimen_80"
+            android:layout_height="@dimen/dimen_80"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:background="@drawable/ic_gift"
+            android:padding="@dimen/dimen_25"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_separator"
+            app:srcCompat="@drawable/ic_gift_box" />
+
+        <TextView
+            android:id="@+id/tv_refer_friend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="@string/refer_a_friend"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_card" />
+
+
+        <TextView
+            android:id="@+id/tv_share_code_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_25"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center"
+            android:text="@string/shre_promo_code_mesage"
+            android:textColor="@color/lightGraySubTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_refer_friend" />
+
+        <TextView
+            android:id="@+id/tv_promo_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:background="@drawable/promo_code_bg"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:paddingHorizontal="@dimen/dimen_90"
+            android:paddingVertical="@dimen/dimen_15"
+            android:text="DK0789"
+            android:textColor="@color/promoCodeRed"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_share_code_message" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_share"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_marginHorizontal="@dimen/dimen_25"
+            android:layout_marginBottom="@dimen/dimen_20"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/productPriceGreenColor"
+            app:cardCornerRadius="@dimen/dimen_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_add_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:text="@string/share"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

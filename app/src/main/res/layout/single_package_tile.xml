@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.codingpixel.dedicatekitchen.helpers.Constants" />
+
+        <variable
+            name="model"
+            type="com.codingpixel.dedicatekitchen.models.PackageModel" />
+
+        <variable
+            name="listener"
+            type="com.codingpixel.dedicatekitchen.interfaces.SubscriptionInterface" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{model.bronze ? @drawable/bronze_package_bg : model.gold ? @drawable/gold_package_bg : model.silver ? @drawable/silver_package_bg : model.platinum ? @drawable/platinum_package_bg : @drawable/bronze_package_bg }">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_30"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="start"
+            android:text="@{model.name}"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <View
+            android:id="@+id/white_cap"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/package_price_white_capsule_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_sub_price_tag"
+            app:layout_constraintEnd_toEndOf="@+id/tv_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_price" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:paddingTop="@dimen/dimen_20"
+            android:text="@{Constants.DOLLAR_SIGN + model.text}"
+            android:textColor="@color/cartTitleColor"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@+id/vertical_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sub_price_tag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="MINIMUM"
+            android:textColor="@color/cartTitleColor"
+            app:layout_constraintEnd_toStartOf="@+id/vertical_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_items"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_30"
+            android:layout_marginVertical="@dimen/dimen_15"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/tv_footer_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/white_cap"
+            tools:itemCount="3"
+            tools:listitem="@layout/single_plan_feature_item" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_footer_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_plan_checked_tick"
+            android:drawablePadding="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/tv_plan_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_dollar"
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_plan_price"
+            app:layout_constraintEnd_toStartOf="@+id/tv_plan_price"
+            app:layout_constraintTop_toTopOf="@+id/tv_plan_price"
+            app:srcCompat="@drawable/ic_dollar_sign" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_plan_price"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_30"
+            android:layout_marginBottom="@dimen/dimen_25"
+            android:background="@drawable/bg"
+            android:drawableEnd="@drawable/ic_dropdown"
+            android:drawablePadding="@dimen/dimen_15"
+            android:drawableTint="@color/black"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dimen_20"
+            android:text="@{model.text}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_buy_now"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_buy_now"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_50"
+            android:layout_marginHorizontal="@dimen/dimen_50"
+            android:layout_marginBottom="@dimen/dimen_30"
+            android:background="@drawable/white_hollow_capsule_bg"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="buy now"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

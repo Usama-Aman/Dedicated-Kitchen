@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_sign_in"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_margin="@dimen/dimen_20"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            app:cardCornerRadius="@dimen/dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:text="Login to see Account Options"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

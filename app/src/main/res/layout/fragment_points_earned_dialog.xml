@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="@dimen/dimen_25"
+            android:elevation="@dimen/dimen_10"
+            app:cardCornerRadius="@dimen/dimen_20">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dimen_15"
+                android:paddingVertical="@dimen/dimen_20">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_heart"
+                    android:layout_width="@dimen/dimen_80"
+                    android:layout_height="@dimen/dimen_80"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:background="@drawable/dark_circle_bg"
+                    android:padding="@dimen/dimen_20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_heart" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_25"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="You've Earned 300 points."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_heart" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_sub_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum biben."
+                    android:textColor="@color/grayAppTextColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_go_to_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginHorizontal="@dimen/dimen_30"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginBottom="@dimen/dimen_15"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/productPriceGreenColor"
+                    app:cardCornerRadius="@dimen/dimen_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_sub_title">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:gravity="center"
+                        android:text="Go to Menu"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+
+</layout>

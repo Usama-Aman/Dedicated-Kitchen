@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/main_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#50afafaf">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:background="@drawable/white_rounded_bg">
+
+            <View
+                android:id="@+id/top_bar"
+                android:layout_width="@dimen/dimen_40"
+                android:layout_height="@dimen/dimen_5"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_marginBottom="@dimen/dimen_35"
+                android:background="@drawable/bottom_sheet_top_rounded_bar"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/options_dummy_footer"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_70"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_info_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/top_bar">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_person_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginHorizontal="@dimen/dimen_25"
+                    android:background="@drawable/account_fields_bg"
+                    android:hint="@string/card_holder_name"
+                    android:inputType="text"
+                    android:paddingHorizontal="@dimen/dimen_15"
+                    android:textColor="@color/darkGrayTitleColor"
+                    android:textColorHint="@color/grayFieldHintcolor"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--                android:drawableEnd="@drawable/ic_checked_tick"
+    -->
+
+                <!--            <androidx.appcompat.widget.AppCompatEditText-->
+                <!--                android:id="@+id/et_card_number"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="@dimen/dimen_45"-->
+                <!--                android:layout_marginTop="@dimen/dimen_15"-->
+                <!--                android:background="@drawable/account_fields_bg"-->
+                <!--                android:drawableStart="@drawable/ic_payment_info_dim"-->
+                <!--                android:drawableEnd="@drawable/ic_checked_tick"-->
+                <!--                android:drawablePadding="@dimen/_10sdp"-->
+                <!--                android:hint="  xxxx xxxx xxxx 0000"-->
+                <!--                android:inputType="number"-->
+                <!--                android:maxLength="16"-->
+                <!--                android:paddingHorizontal="@dimen/dimen_15"-->
+                <!--                android:paddingStart="@dimen/dimen_15"-->
+                <!--                android:paddingEnd="@dimen/dimen_15"-->
+                <!--                android:textColor="@color/quantum_pink"-->
+                <!--                android:textColorHint="@color/black"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintTop_toBottomOf="@+id/et_person_name" />-->
+
+                <!--            <androidx.appcompat.widget.AppCompatEditText-->
+                <!--                android:id="@+id/et_card_number"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="0dp"-->
+                <!--                android:background="@android:color/transparent"-->
+                <!--                android:cursorVisible="false"-->
+                <!--                android:gravity="bottom|end"-->
+                <!--                android:inputType="number"-->
+                <!--                android:textColor="@android:color/transparent"-->
+                <!--                android:textColorHint="@android:color/transparent"-->
+                <!--                android:textSize="5sp"-->
+                <!--                app:layout_constraintBottom_toBottomOf="@+id/tv_card_number"-->
+                <!--                app:layout_constraintEnd_toEndOf="@+id/tv_card_number"-->
+                <!--                app:layout_constraintStart_toStartOf="@+id/tv_card_number"-->
+                <!--                app:layout_constraintTop_toTopOf="@+id/tv_card_number" />-->
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_card_number"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginHorizontal="@dimen/dimen_25"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/account_fields_bg"
+                    android:drawableStart="@drawable/ic_payment_method"
+                    android:drawablePadding="@dimen/dimen_15"
+                    android:gravity="center_vertical"
+                    android:hint="@string/card_number_field_hint"
+                    android:inputType="number"
+                    android:maxLength="19"
+                    android:paddingHorizontal="@dimen/dimen_15"
+                    android:textColor="@color/darkGrayTitleColor"
+                    android:textColorHint="@color/grayFieldHintcolor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_person_name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_month_year"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginStart="@dimen/dimen_25"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:background="@drawable/account_fields_bg"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:gravity="center_vertical"
+                    android:hint="MM/YY"
+                    android:paddingStart="@dimen/dimen_15"
+                    android:textColor="@color/darkGrayTitleColor"
+                    android:textColorHint="@color/grayFieldHintcolor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/et_cvc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_card_number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_cvc"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:layout_marginEnd="@dimen/dimen_25"
+                    android:background="@drawable/account_fields_bg"
+                    android:hint="@string/cvc"
+                    android:inputType="number"
+                    android:maxEms="3"
+                    android:maxLength="3"
+                    android:paddingStart="@dimen/dimen_15"
+                    android:textAllCaps="true"
+                    android:textColor="@color/darkGrayTitleColor"
+                    android:textColorHint="@color/grayFieldHintcolor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_month_year"
+                    app:layout_constraintTop_toBottomOf="@+id/et_card_number" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/cb_set_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_25"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:button="@drawable/check_box_default_payment_toggle_bg"
+                    android:checked="false"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:paddingHorizontal="@dimen/dimen_10"
+                    android:text="@string/set_default_payment"
+                    android:textColor="@color/lightGraySubTitleColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_cvc" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_add_card"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginHorizontal="@dimen/dimen_25"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    android:layout_marginBottom="@dimen/dimen_20"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/productPriceGreenColor"
+                    app:cardCornerRadius="@dimen/dimen_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_set_default">
+
+
+                    <TextView
+                        android:id="@+id/tv_add_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:gravity="center"
+                        android:text="@string/add_card"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_add_card" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>

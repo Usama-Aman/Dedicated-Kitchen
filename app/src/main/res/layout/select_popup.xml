@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5"
+            android:background="@drawable/bg_with_border"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_6"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_dedicate_eagle_ridge_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+
+                <TextView
+                    android:id="@+id/tv_dedicate_eagle_ridge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen_15"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_10"
+                    android:text="@string/dedicate_eagle_ridge"
+                    android:textColor="@color/darkGrayTitleColor"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5"
+            android:background="@drawable/bg_with_border"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_6"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_dedicate_marda_kitchen_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+
+                <TextView
+                    android:id="@+id/tv_dedicate_marda_loop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen_15"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_10"
+                    android:text="@string/dedicate_marda_loop"
+                    android:textColor="@color/contentDescriptionColor"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_kitchens"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="3"
+            tools:listitem="@layout/single_kitchen_selection_item" />
+
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5"
+            android:background="@drawable/dark_gray_rounded_rectangle"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_kitchens" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_cancel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

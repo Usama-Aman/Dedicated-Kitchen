@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.local.IntroSlider" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_background_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="250dp"
+            android:layout_height="@dimen/dimen_60"
+            app:srcCompat="@drawable/splash_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="@dimen/dimen_60"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:fontFamily="@font/bebasneue_bold"
+            android:text="@{source.title}"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            app:layout_constraintBottom_toTopOf="@+id/tv_sub_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_80"
+            android:fontFamily="@font/tahoma_medium"
+            android:text="@{source.subTitle}"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <!-- <androidx.core.widget.NestedScrollView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- OLD Start-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_take_out"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/iv_meal_prep"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/take_out" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_next_rounded_arrow"
+            android:drawablePadding="@dimen/dimen_10"
+            android:fontFamily="@font/bebasneue_bold"
+            android:text="@string/take_out"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_take_out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_take_out" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_meal_prep"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_take_out"
+            app:srcCompat="@drawable/meal_prep" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_next_rounded_arrow"
+            android:drawablePadding="@dimen/dimen_10"
+            android:fontFamily="@font/bebasneue_bold"
+            android:text="@string/meal_prep"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_meal_prep"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_meal_prep" />
+
+        <!-- OLD End-->
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/m1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"
+
+            />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/m2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.45"
+
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/m3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.55"
+
+            />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/m4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tv_restaurant_menu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dimen_15"
+            android:text="@string/restaurant_menu"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/m1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:minTextSize="12sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_take_out_categories"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layoutAnimation="@anim/layout_animation_right_to_left"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/m2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/m1"
+            tools:itemCount="10"
+            tools:listitem="@layout/single_menu_category_item" />
+
+
+        <ProgressBar
+            android:id="@+id/pb_take_out_categories_loader"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            android:indeterminateOnly="true"
+            android:indeterminateTint="@color/appColor"
+            app:layout_constraintBottom_toBottomOf="@+id/rv_take_out_categories"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rv_take_out_categories" />
+
+
+        <me.grantland.widget.AutofitTextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dimen_15"
+            android:text="@string/meal_prep_menu"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/m3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/m2"
+            app:minTextSize="12sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_meal_prep_categories"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layoutAnimation="@anim/layout_animation_right_to_left"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/m4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/m3"
+            tools:itemCount="10"
+            tools:listitem="@layout/single_menu_category_item" />
+
+
+        <ProgressBar
+            android:id="@+id/pb_meal_prep_categories_loader"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            android:indeterminateOnly="true"
+            android:indeterminateTint="@color/appColor"
+            app:layout_constraintBottom_toBottomOf="@+id/rv_meal_prep_categories"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rv_meal_prep_categories" />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/green_footer_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_order" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tv_order"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:enabled="false"
+            android:fontFamily="@font/bebasneue_bold"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/start_your_order"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/m4"
+            app:minTextSize="12sp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

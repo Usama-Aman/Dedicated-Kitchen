@@ -1,0 +1,176 @@
+<resources>
+    <string name="app_name">Dedicate Kitchen</string>
+
+    <string name="or">or</string>
+
+    <string name="intermediate_screen_message">Curabitur lobortis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at. </string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Register</string>
+    <string name="continue_with_google">Continue With Google</string>
+    <string name="continue_with_facebook">Continue With Facebook</string>
+    <string name="dont_have_account">Don’t have an account?</string>
+    <string name="sign_up_now">Sign up now!</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="email_or_phone_number">Email or Phone Number</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password_title">Forgot\nPassword</string>
+    <string name="enter_your_new_email_password">Enter your Email and new Password</string>
+    <string name="for_sgin_up_or">for sign up, or</string>
+    <string name="register_now">Register Now</string>
+    <string name="already_have_an_account">Already have account?</string>
+    <string name="title_activity_main_bottom_bar">MainBottomBarActivity</string>
+    <string name="take_out">Take Out</string>
+    <string name="meal_prep">Meal Prep</string>
+    <string name="meal_prep_menu">Meal Prep Menu</string>
+    <string name="restaurant_menu">Restaurant Menu</string>
+    <string name="account_details">Account Details</string>
+    <string name="logout">Logout</string>
+    <string name="skip_for_now">Skip for Now</string>
+    <string name="start_your_order">start your order</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+
+    <string name="bottom_menu_home">Our Menu</string>
+    <string name="bottom_menu_favourite">Favorites</string>
+    <string name="bottom_menu_my_orders">My Orders</string>
+    <string name="bottom_menu_my_account">My Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="all_orders">All Orders</string>
+    <string name="history">History</string>
+    <string name="sort_by_all">Sort by All</string>
+    <string name="date_and_time">Date &amp; Time:</string>
+    <string name="method_of_pick_up">Method of Pickup</string>
+    <string name="method">Method</string>
+    <string name="pending">Pending</string>
+    <string name="in_progress">In Progress</string>
+    <string name="order_completed">Order Completed</string>
+    <string name="order_cancelled">Order Cancelled</string>
+    <string name="sort_by">Sort By</string>
+    <string name="popular_items">Popular Items</string>
+    <string name="see_all_6">See all (6)</string>
+    <string name="select_one">Select One</string>
+    <string name="choose_quantity">Choose Quantity</string>
+    <string name="special_instruction_optional">Special Instruction (Optional)</string>
+    <string name="add_to_bag">Add to Bag</string>
+    <string name="my_bag">My Bag</string>
+    <string name="continue_to_check_out">Continue to Checkout</string>
+    <string name="total">Total</string>
+    <string name="coupan_discount">Coupon Discount</string>
+    <string name="delivery">Delivery</string>
+    <string name="free">Free</string>
+    <string name="tax_fee">Tax &amp; Fees</string>
+    <string name="sub_total">Subtotal</string>
+    <string name="apply">Apply</string>
+    <string name="coupan_code">Coupon Code</string>
+    <string name="edit">Edit</string>
+    <string name="select_address">Select Address</string>
+    <string name="continue_label">Continue</string>
+    <string name="shipping">Shipping</string>
+    <string name="add_another">+Add Another</string>
+    <string name="payment_methods">Payment Methods</string>
+    <string name="default_payment">Default Payment</string>
+    <string name="not_default">Not Default</string>
+    <string name="google_pay">Google Pay</string>
+    <string name="order_successfully">Order Successful</string>
+    <string name="continue_order">Continue Order</string>
+    <string name="account_information">Account Information</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="change_settings">Change settings</string>
+    <string name="change_password">Change Password</string>
+    <string name="new_password">New Password</string>
+    <string name="dont_have_card">Don’t have any card</string>
+    <string name="dont_have_item">Your Bag is Empty.</string>
+    <string name="dont_have_card_message">It looks like you do not have a credit or debit card yet. Please add your cards easily 😊</string>
+    <string name="add_cards">Add Cards</string>
+    <string name="add_card">Add Card</string>
+    <string name="credit_cards">Credit Cards</string>
+    <string name="share">Share</string>
+    <string name="refer_and_get_discount">Refer &amp; Get Discount</string>
+    <string name="refer_a_friend">Refer a friend</string>
+    <string name="shre_promo_code_mesage">Share your promo code with a friend and you\nboth get $15 discount.</string>
+    <string name="enter_locations">Enter Locations</string>
+    <string name="enter_delivery_locations">Enter Delivery Locations</string>
+    <string name="delivery_locations">Delivery Locations</string>
+    <string name="delivery_location_message">Enter your location to make your delivery convenient 📦</string>
+    <string name="set_default_payment">Set Default Payment</string>
+    <string name="cvc">CVC</string>
+    <string name="verification_link_is_sent">We\'ve sent a verification link via email.</string>
+    <string name="registration_successfull">Registration Successful</string>
+    <string name="add_mobile_number">Add mobile number</string>
+    <string name="enter_mobile_message">Enter your mobile number to order and verify your mobile number via verification code.</string>
+    <string name="send_code">Send Code</string>
+    <string name="send_code_again">Send code again</string>
+    <string name="verification_code">Verification code</string>
+    <string name="digit_code_is_sent">We\'ve sent 4 digits code on</string>
+    <string name="your_phone">your phone</string>
+    <string name="your_email">your email</string>
+    <string name="i_did_not_get_code">I didn\'t receive a code</string>
+    <string name="pick_up">Pick-up</string>
+    <string name="change_delivery_location">Choose Delivery Location</string>
+    <string name="choose_our_kitchen">Choose Our Kitchen</string>
+    <string name="change_now">Change Now</string>
+    <string name="cancel">Cancel</string>
+    <string name="delivery_time">Delivery Time</string>
+    <string name="pick_up_time">Pick-up Time</string>
+    <string name="pick_up_today">Pickup Today</string>
+    <string name="done">Done</string>
+    <string name="we_will_send_password_recovery_link_to_email">We will send you a link to the mail for\npassword recovery.</string>
+    <string name="send_link">Send Link</string>
+    <string name="havent_received_code">Haven\'t received\na code yet?</string>
+    <string name="check_correct_phone_number">Check correct phone number</string>
+    <string name="expire_date">Expiry Date</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="card_number_field_hint">XXXX XXXX XXXX XXXX</string>
+    <string name="your_recent_locations">Your Recent Locations</string>
+    <string name="mm_yy">MM/YY</string>
+
+    <string name="dummy">\u2022 1GB Storage Space \n
+    \u2022 1GB Storage Space \n
+    \u2022 1GB Storage Space \n
+    \u2022 1GB Storage Space \n
+    \u2022 1GB Storage Space \n</string>
+
+    <string name="bullet">\u2022</string>
+    <string name="in_case_you_want_to_cancel_order_please_call_on_this_number_780_790_0065_or_go_to_the_store_for_refund_we_can_only_give_refunds_in_credit_since_we_do_not_accept_cash_on_the_app">
+        In case you want to cancel order, please call on this number 780-790-0065 or go to the store for refund. We can only give refunds in credit since we do not accept cash on the app.
+    </string>
+    <string name="order_information">Order Information</string>
+    <string name="less_balance">Your balance did not meet the minimum transaction amount, please choose from the following options.</string>
+    <string name="dedicate_kitchen_meal_prep_order">Dedicate Kitchen Meal Prep Order</string>
+    <string name="choose_your_desired_meal_prep_order_type">Choose your desired meal prep order type</string>
+    <string name="select_delivery_date_time"><![CDATA[Select Delivery Date & Time]]></string>
+    <string name="choose_your_delivery_address">Choose Your Delivery Address</string>
+    <string name="select_pickup_date_time"><![CDATA[Select Pickup Date & Time]]></string>
+    <string name="no_card_found_please_add_your_card_first">No Card Found. Please Add your Card First.</string>
+    <string name="order_note">Order Note:</string>
+    <string name="choose_your_kitchen">Choose Your Kitchen</string>
+    <string name="dedicate_marda_loop">Dedicate Marda Loop</string>
+    <string name="dedicate_eagle_ridge">Dedicate Eagle Ridge</string>
+    <string name="_1">1</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="select_pickup_date">Select Pickup Date</string>
+    <string name="pick_up_date">Pick Up Date</string>
+    <string name="select_pickup_time">Select Pickup Time</string>
+    <string name="enter_location">Enter Address</string>
+    <string name="continue_as_guests_underlined"><u>Continue as Guest</u></string>
+    <string name="save_changes">Save Changes</string>
+    <string name="add_another_card">Add Another Card</string>
+    <string name="empty"> </string>
+    <string name="select_group">Are you with a group?</string>
+
+    <string name="app_info_welcome_message">Earn rewards , review previous order history , order meal prep packages, delivery or take out, and more, all on one app!
+    </string>
+
+</resources>

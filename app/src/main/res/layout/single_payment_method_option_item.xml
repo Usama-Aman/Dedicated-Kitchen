@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.PaymentMethod" />
+
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.local.PaymentMethodOptionsAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{()-> adapter.optionTapped(position)}"
+        android:paddingVertical="@dimen/dimen_7">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_method_icon"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@{source.title}"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_next_arrow"
+            app:layout_constraintStart_toEndOf="@+id/iv_method_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="@{source.subTitle}"
+            android:textColor="@color/lightGraySubTitleColor"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_next_arrow"
+            app:layout_constraintStart_toEndOf="@+id/iv_method_icon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_next_arrow"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_20"
+            android:scaleX="-1"
+            android:padding="@dimen/dimen_3"
+            android:tint="@color/accountSectionLabelColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

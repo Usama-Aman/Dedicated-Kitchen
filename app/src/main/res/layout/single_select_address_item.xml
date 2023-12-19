@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.UserLocation" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.LocationsAdapter" />
+
+        <variable
+            name="showToggle"
+            type="Boolean" />
+
+        <variable
+            name="showDelete"
+            type="Boolean" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_5"
+        android:background="@drawable/choose_location_item_bg"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{()-> adapter.itemTapped(position)}"
+        android:padding="@dimen/dimen_15">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_address_icon"
+            android:layout_width="@dimen/dimen_17"
+            android:layout_height="@dimen/dimen_17"
+            android:src="@drawable/ic_address"
+            android:padding="@dimen/dimen_2"
+            android:layout_marginTop="@dimen/dimen_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="@{source.address}"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_selected_tick"
+            app:layout_constraintStart_toEndOf="@+id/iv_address_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:textColor="@color/lightGraySubTitleColor"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_selected_tick"
+            app:layout_constraintStart_toEndOf="@+id/iv_address_icon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_selected_tick"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_checked_tick" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

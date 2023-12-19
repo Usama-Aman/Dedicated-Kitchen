@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appColor"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_back_arrow"
+                android:layout_width="@dimen/app_back_arrow_width"
+                android:layout_height="@dimen/app_back_arrow_height"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:padding="@dimen/app_back_arrow_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:id="@+id/tv_add_mobile_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="@string/add_mobile_number"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_back_arrow" />
+
+            <TextView
+                android:id="@+id/tv_enter_number_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="@string/enter_mobile_message"
+                android:textColor="@color/dontHaveAccountLabelColor"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_add_mobile_number"
+                app:layout_constraintStart_toStartOf="@+id/tv_add_mobile_number"
+                app:layout_constraintTop_toBottomOf="@+id/tv_add_mobile_number" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_phone_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_40"
+                android:background="@drawable/green_edit_field_bg"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:hint="+1-541-293-192"
+                android:inputType="phone"
+                android:paddingVertical="@dimen/dimen_15"
+                android:paddingStart="@dimen/dimen_15"
+                android:textColor="@color/white"
+                android:textColorHint="@color/greenBgFieldsHintColor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_add_mobile_number"
+                app:layout_constraintStart_toStartOf="@+id/tv_add_mobile_number"
+                app:layout_constraintTop_toBottomOf="@+id/tv_enter_number_message" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_send_code"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_45"
+                android:layout_marginTop="@dimen/dimen_35"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/darkGrayLabelColor"
+                app:cardCornerRadius="@dimen/dimen_16"
+                app:layout_constraintEnd_toEndOf="@+id/tv_add_mobile_number"
+                app:layout_constraintStart_toStartOf="@+id/tv_add_mobile_number"
+                app:layout_constraintTop_toBottomOf="@+id/et_phone_number">
+
+                <TextView
+                    android:id="@+id/tv_send_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:gravity="center"
+                    android:text="@string/send_code"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dimen_20"
+                android:paddingVertical="@dimen/dimen_15"
+                android:textColor="@color/white"
+                android:text="@string/skip_for_now"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_send_code"
+                app:layout_constraintStart_toStartOf="@+id/btn_send_code"
+                app:layout_constraintTop_toBottomOf="@+id/btn_send_code" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/intermediate_logo_width"
+                android:layout_height="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/dimen_30"
+                android:scaleType="fitEnd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_skip"
+                app:srcCompat="@drawable/food_plate_bg" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</layout>

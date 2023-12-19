@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.MenuItemModel" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.mealprep.MealPrepSubSectionAdapter" />
+
+        <import type="com.codingpixel.dedicatekitchen.helpers.Constants" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dimen_2"
+        android:onClick="@{()-> adapter.itemTapped(position)}"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_10"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:clickable="false"
+            android:button="@drawable/check_box_toggle_bg"
+            android:checked="@{source.isChecked ? true : false}"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dimen_10"
+            android:text="@{source.menuItemName}"
+            android:maxLines="1"
+            android:textColor="@color/ingredientColor"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_minus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_minus"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_marginHorizontal="@dimen/dimen_5"
+            android:onClick="@{()-> adapter.minusTapped(position)}"
+            android:visibility="@{source.showQuantityChanger ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/rb"
+            app:layout_constraintEnd_toStartOf="@+id/tv_option_quantity"
+            app:layout_constraintStart_toEndOf="@+id/rb"
+            app:layout_constraintTop_toTopOf="@+id/rb"
+            app:srcCompat="@drawable/ic_minus_hollow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_option_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_5"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center"
+            android:visibility="@{source.showQuantityChanger ? View.VISIBLE : View.GONE}"
+            android:paddingHorizontal="@dimen/dimen_5"
+            android:text="@{source.quantity}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/rb"
+            app:layout_constraintEnd_toStartOf="@+id/iv_plus"
+            app:layout_constraintStart_toEndOf="@+id/iv_minus"
+            app:layout_constraintTop_toTopOf="@+id/rb" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_plus"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_marginHorizontal="@dimen/dimen_5"
+            android:visibility="@{source.showQuantityChanger ? View.VISIBLE : View.GONE}"
+            android:onClick="@{()-> adapter.plusTapped(position)}"
+            app:layout_constraintBottom_toBottomOf="@+id/rb"
+            app:layout_constraintEnd_toStartOf="@+id/tv_price"
+            app:layout_constraintStart_toEndOf="@+id/tv_option_quantity"
+            app:layout_constraintTop_toTopOf="@+id/rb"
+            app:srcCompat="@drawable/ic_plus_hollow" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dimen_6"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:gravity="center"
+            android:text="@{source.getFormattedPrice}"
+            app:layout_constraintBottom_toBottomOf="@+id/rb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rb" />
+
+        <View
+            android:id="@+id/white_bg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

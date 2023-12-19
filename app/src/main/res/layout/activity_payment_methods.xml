@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clipChildren="false">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_change_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="@string/payment_methods"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/title_separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_change_password" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/empty_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_separator">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_card"
+                android:layout_width="@dimen/dimen_80"
+                android:layout_height="@dimen/dimen_80"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:background="@drawable/ic_gift"
+                android:padding="@dimen/dimen_25"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_golden_card" />
+
+            <TextView
+                android:id="@+id/tv_dont_have_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_15"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:gravity="center"
+                android:text="@string/dont_have_card"
+                android:textColor="@color/darkGrayTitleColor"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_card" />
+
+
+            <TextView
+                android:id="@+id/tv_dont_have_card_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_25"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="center"
+                android:text="@string/dont_have_card_message"
+                android:textColor="@color/lightGraySubTitleColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dont_have_card" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_add_first_card"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_45"
+                android:layout_marginHorizontal="@dimen/dimen_25"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/productPriceGreenColor"
+                app:cardCornerRadius="@dimen/dimen_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dont_have_card_message">
+
+                <TextView
+                    android:id="@+id/tv_add_first_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:gravity="center"
+                    android:text="@string/add_card"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cards_listing_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_separator">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/pull_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/cv_add_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false"
+                        android:paddingHorizontal="@dimen/dimen_25">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_credit_cards"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_display_bold"
+                            android:text="@string/credit_cards"
+                            android:textColor="@color/darkGrayTitleColor"
+                            android:textSize="14sp"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/separator"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:background="@color/separatorColor"
+                            app:layout_constraintEnd_toEndOf="@+id/tv_credit_cards"
+                            app:layout_constraintStart_toStartOf="@+id/tv_credit_cards"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_credit_cards" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_cards"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_15"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/separator"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/single_payment_method_item" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.core.widget.NestedScrollView>
+
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_add_card"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_45"
+                android:layout_marginHorizontal="@dimen/dimen_25"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/productPriceGreenColor"
+                app:cardCornerRadius="@dimen/dimen_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_add_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:gravity="center"
+                    android:text="@string/add_another_card"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

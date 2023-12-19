@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appColor">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/dimen_20"
+            android:scaleType="fitEnd"
+            android:padding="@dimen/dimen_5"
+            app:layout_constraintBottom_toTopOf="@+id/tv_register_successful"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_operation_completed_tick" />
+
+        <TextView
+            android:id="@+id/tv_register_successful"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="@string/registration_successfull"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_link_is_sent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_link_is_sent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginBottom="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:gravity="center"
+            android:text="@string/verification_link_is_sent"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/central_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/central_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_continue"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_marginHorizontal="@dimen/dimen_25"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/darkGrayLabelColor"
+            app:cardCornerRadius="@dimen/dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/central_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:text="@string/continue_label"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/intermediate_logo_width"
+            android:layout_height="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="@dimen/dimen_30"
+            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_continue"
+            app:srcCompat="@drawable/food_plate_bg" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

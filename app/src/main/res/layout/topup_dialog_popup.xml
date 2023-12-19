@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/dialog_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="@dimen/dimen_30"
+            android:layout_marginVertical="@dimen/dimen_20"
+            android:elevation="@dimen/dimen_3"
+            app:cardCornerRadius="@dimen/dimen_10">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:paddingHorizontal="@dimen/dimen_15"
+                android:paddingVertical="@dimen/dimen_20">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_cross" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="@string/dedicate_kitchen_meal_prep_order"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_sub_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="@string/choose_your_desired_meal_prep_order_type"
+                    android:textColor="#CC000000"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_heading" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_topup_credit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_50"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:background="@drawable/transparent_bg_with_border"
+                    android:drawableStart="@drawable/ic_dollar_sign"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:elevation="@dimen/dimen_5"
+                    android:enabled="false"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:text="4.00"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_sub_heading" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_topup_credit" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_no_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dimen_20"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="@string/no_card_found_please_add_your_card_first"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/cv_topup"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_topup_credit" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_topup"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginBottom="@dimen/dimen_15"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/productPriceGreenColor"
+                    app:cardCornerRadius="@dimen/dimen_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_cards">
+
+                    <TextView
+                        android:id="@+id/button_save"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:gravity="center"
+                        android:text="TopUp In Your Credits"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginVertical="@dimen/dimen_20"
+        android:background="@drawable/popup_bg"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginVertical="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_info" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:text="@string/order_information"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="@dimen/dimen_20"
+            android:textAlignment="center"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="@string/in_case_you_want_to_cancel_order_please_call_on_this_number_780_790_0065_or_go_to_the_store_for_refund_we_can_only_give_refunds_in_credit_since_we_do_not_accept_cash_on_the_app"
+            android:textColor="@color/darkGrayLabelColor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

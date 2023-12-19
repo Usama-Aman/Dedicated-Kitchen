@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <TextView
+            android:id="@+id/tv_enter_location"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_50"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="@string/enter_locations"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="0dp"
+            android:contentDescription="@string/empty"
+            android:padding="@dimen/dimen_15"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_enter_location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_enter_location" />
+
+        <View
+            android:id="@+id/title_separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_enter_location" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_card"
+            android:layout_width="@dimen/dimen_80"
+            android:layout_height="@dimen/dimen_80"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:background="@drawable/ic_gift"
+            android:padding="@dimen/dimen_25"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_separator"
+            app:srcCompat="@drawable/ic_red_pin" />
+
+        <TextView
+            android:id="@+id/tv_enter_delivery_locations"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="@string/delivery_locations"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_card" />
+
+
+        <TextView
+            android:id="@+id/tv_delivery_location_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_25"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center"
+            android:text="@string/delivery_location_message"
+            android:textColor="@color/lightGraySubTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_enter_delivery_locations" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_25"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:background="@drawable/account_fields_bg"
+            android:drawableStart="@drawable/ic_delivery_locations"
+            android:drawablePadding="@dimen/dimen_15"
+            android:hint="Enter Location.."
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="@dimen/dimen_10"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_delivery_location_message" />
+
+        <TextView
+            android:id="@+id/tv_your_recent_locations"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:text="@string/your_recent_locations"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_location"
+            app:layout_constraintStart_toStartOf="@+id/tv_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_locations"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_your_recent_locations"
+            tools:itemCount="3"
+            tools:listitem="@layout/single_saved_location_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

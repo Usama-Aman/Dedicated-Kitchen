@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    >
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="@drawable/white_top_rounded_20dp_bg"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+
+        <View
+            android:id="@+id/top_bar"
+            android:layout_width="@dimen/dimen_40"
+            android:layout_height="@dimen/dimen_5"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginBottom="@dimen/dimen_35"
+            android:background="@color/dimBlack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_account_information"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="@string/account_information"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_bar" />
+
+        <View
+            android:id="@+id/title_separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_account_information" />
+
+
+        <TextView
+            android:id="@+id/tv_full_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_25"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@string/full_name"
+            android:textColor="@color/accountSectionLabelColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_separator" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_full_name"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@drawable/account_fields_bg"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:inputType="text"
+            android:paddingStart="@dimen/dimen_10"
+            android:text="Zohaib Raza"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_full_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_full_name" />
+
+        <View
+            android:id="@+id/name_separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_full_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_full_name" />
+
+
+        <TextView
+            android:id="@+id/tv_email_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_25"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@string/email_address"
+            android:textColor="@color/accountSectionLabelColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_separator" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_email_address"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@drawable/account_fields_bg"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/dimen_10"
+            android:text="zohaibraza@gmail.com"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_full_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email_address" />
+
+        <View
+            android:id="@+id/email_separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_full_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_email_address" />
+
+
+        <TextView
+            android:id="@+id/tv_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_25"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@string/phone_number"
+            android:textColor="@color/accountSectionLabelColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_separator" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@drawable/account_fields_bg"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:inputType="phone"
+            android:paddingStart="@dimen/dimen_10"
+            android:text="123345312"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_full_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_phone_number" />
+
+        <!--        <View-->
+        <!--            android:id="@+id/email_separator"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_marginTop="@dimen/dimen_25"-->
+        <!--            android:background="@color/separatorColor"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/tv_full_name"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/tv_full_name"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/et_phone_number" />-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_check_out"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:layout_marginBottom="@dimen/dimen_15"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/productPriceGreenColor"
+            app:cardCornerRadius="@dimen/dimen_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_full_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_full_name">
+
+            <TextView
+                android:id="@+id/tv_add_to_bag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:text="@string/change_settings"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

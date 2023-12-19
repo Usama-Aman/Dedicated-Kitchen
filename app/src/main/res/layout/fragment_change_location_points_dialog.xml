@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/dialog_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/dimen_20"
+            android:elevation="@dimen/dimen_3"
+            app:cardCornerRadius="@dimen/dimen_10">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingHorizontal="@dimen/dimen_15"
+                android:paddingVertical="@dimen/dimen_20">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/un_selected_filter_bg"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_pick_up"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_pick_up"
+                    app:layout_constraintStart_toStartOf="@+id/tv_delivery"
+                    app:layout_constraintTop_toTopOf="@+id/tv_delivery" />
+
+                <TextView
+                    android:id="@+id/tv_delivery"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginStart="@dimen/dimen_30"
+                    android:background="@drawable/dark_gray_left_rounded_rect"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/delivery"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_pick_up"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_pick_up"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginEnd="@dimen/dimen_30"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/pick_up"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_delivery"
+                    app:layout_constraintTop_toTopOf="@+id/tv_delivery" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:fontFamily="@font/sf_pro_display_bold"
+                    android:gravity="start"
+                    android:text="@string/change_delivery_location"
+                    android:textColor="@color/darkGrayTitleColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_delivery" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    app:layout_constraintStart_toStartOf="@+id/tv_title"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_title"
+                    android:background="@color/separatorColor"
+                    android:id="@+id/separator"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_5"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+                <TextView
+                    android:id="@+id/tv_add_another"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:fontFamily="@font/sf_pro_display_bold"
+                    android:paddingVertical="@dimen/dimen_10"
+                    android:text="@string/add_another"
+                    android:textColor="@color/seeAllLabelColor"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@+id/rv_content"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_content" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:background="@drawable/light_gray_hollow_field_bg"
+                    android:drawableStart="@drawable/ic_clock"
+                    android:drawablePadding="@dimen/dimen_10"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/dimen_10"
+                    android:text="@string/delivery_time"
+                    android:textColor="@color/coupan_code_color"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_add_another" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_change_now"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_45"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginBottom="@dimen/dimen_15"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/productPriceGreenColor"
+                    app:cardCornerRadius="@dimen/dimen_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_time">
+
+                    <TextView
+                        android:id="@+id/tv_add_to_bag"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:gravity="center"
+                        android:text="@string/change_now"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/dimen_25"
+                    android:paddingVertical="@dimen/dimen_10"
+                    android:text="@string/cancel"
+                    android:textColor="@color/ingredientColor"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_change_now" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</layout>

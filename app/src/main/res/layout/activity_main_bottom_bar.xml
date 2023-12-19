@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/white"
+        tools:context=".activities.dashboard.MainBottomBarActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_greetings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:textColor="@color/darkGrayLabelColor"
+            android:textSize="24sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/iv_bag"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_location_time_change"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/dimen_5"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tv_greetings"
+            app:layout_constraintStart_toStartOf="@+id/tv_greetings"
+            app:layout_constraintTop_toBottomOf="@+id/tv_greetings" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_register"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:foreground="?android:selectableItemBackgroundBorderless"
+            android:hint="Fetching Rewards Points..."
+            android:paddingVertical="@dimen/dimen_3"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tv_greetings"
+            app:layout_constraintStart_toStartOf="@+id/tv_greetings"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location_time_change" />
+
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_register"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_bag"
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="@dimen/dimen_40"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:padding="@dimen/dimen_10"
+            android:src="@drawable/ic_bag"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_cart_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dimen_2"
+            android:textAllCaps="true"
+            android:textColor="@color/darkGrayLabelColor"
+            android:textSize="10sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv_bag"
+            app:layout_constraintTop_toBottomOf="@+id/iv_bag"
+
+            />
+
+        <View
+            android:id="@+id/btn_cart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_cart_count"
+            app:layout_constraintEnd_toEndOf="@+id/tv_cart_count"
+            app:layout_constraintStart_toStartOf="@+id/tv_cart_count"
+            app:layout_constraintTop_toTopOf="@+id/iv_bag" />
+
+
+        <!--
+
+        -->
+        <!---->
+
+        <!--
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+            app:itemTextAppearanceInactive="@style/BottomNavigationView"
+        -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bottom_bar_height"
+            android:animateLayoutChanges="false"
+            android:background="@color/bottomBarBgColor"
+            android:elevation="0dp"
+            android:theme="@style/BottomNavigationTheme"
+            android:visibility="gone"
+            app:itemIconSize="@dimen/dimen_17"
+
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/app_bottom_menu" />
+
+        <View
+            android:id="@+id/bottom_bar"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bottom_bar_height"
+            android:background="@color/bottomBarBgColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_our_menu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tab_favourites"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottom_bar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_tab_menu_icon"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_bottom_home_selected_tab" />
+
+            <TextView
+                android:id="@+id/tv_tab_our_menu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_7"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/bottom_menu_home"
+                android:textColor="@color/bottomTabSelectedColor"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_tab_menu_icon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_favourites"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tab_my_orders"
+            app:layout_constraintStart_toEndOf="@+id/tab_our_menu"
+            app:layout_constraintTop_toTopOf="@+id/bottom_bar">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_tab_favourite_icon"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_bottom_favourite_un_selected_tab" />
+
+            <TextView
+                android:id="@+id/tv_tab_favourites"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_7"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Favorites"
+                android:textColor="@color/bottomTabUnSelectedColor"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_tab_favourite_icon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_my_orders"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tab_packages"
+            app:layout_constraintStart_toEndOf="@+id/tab_favourites"
+            app:layout_constraintTop_toTopOf="@+id/bottom_bar">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_tab_my_orders_icon"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_bottom_my_orders_un_selected_tab" />
+
+            <TextView
+                android:id="@+id/tv_tab_my_orders"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_7"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/bottom_menu_my_orders"
+                android:textColor="@color/bottomTabUnSelectedColor"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_tab_my_orders_icon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_packages"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tab_my_account"
+            app:layout_constraintStart_toEndOf="@+id/tab_my_orders"
+            app:layout_constraintTop_toTopOf="@+id/bottom_bar">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_tab_packages_icon"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_plans_un_selected" />
+
+            <TextView
+                android:id="@+id/tv_paclages"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_7"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/bottom_menu_my_orders"
+                android:textColor="@color/bottomTabUnSelectedColor"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_tab_packages_icon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_my_account"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tab_qr_code"
+            app:layout_constraintStart_toEndOf="@+id/tab_packages"
+            app:layout_constraintTop_toTopOf="@+id/bottom_bar">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_tab_my_account_icon"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_bottom_my_account_un_selected_tab" />
+
+            <TextView
+                android:id="@+id/tv_tab_my_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_7"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/bottom_menu_my_account"
+                android:textColor="@color/bottomTabUnSelectedColor"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_tab_my_account_icon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_qr_code"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tab_my_account"
+            app:layout_constraintTop_toTopOf="@+id/bottom_bar">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_qr_code_icon"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_qr_code_un_seleccted" />
+
+            <TextView
+                android:id="@+id/tv_tab_qr_cpde"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_7"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/bottom_menu_my_account"
+                android:textColor="@color/bottomTabUnSelectedColor"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_qr_code_icon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

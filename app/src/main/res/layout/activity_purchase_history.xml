@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="Points"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_back_arrow" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back_arrow"
+            android:layout_width="@dimen/app_back_arrow_width"
+            android:layout_height="@dimen/app_back_arrow_height"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:padding="@dimen/app_back_arrow_padding"
+            android:tint="@color/bottomTabSelectedColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_current_points"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:gravity="center"
+            android:text="00"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back_arrow" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_current_points_tag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:gravity="center"
+            android:text="Current Points"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_current_points" />
+
+
+        <View
+            android:id="@+id/white_bg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/dimen_20"
+            android:background="@drawable/white_rounded_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_history"
+            app:layout_constraintStart_toStartOf="@+id/tv_history"
+            app:layout_constraintTop_toTopOf="@+id/tv_history"
+
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_history"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/app_back_arrow_padding"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:paddingHorizontal="@dimen/dimen_15"
+            android:paddingVertical="@dimen/dimen_15"
+            android:text="Purchase History"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_current_points_tag" />
+
+        <View
+            android:id="@+id/sep"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grayAppTextColor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_history"
+            app:layout_constraintStart_toStartOf="@+id/tv_history"
+            app:layout_constraintTop_toBottomOf="@+id/tv_history" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_histiry"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_10"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@+id/white_bg"
+            app:layout_constraintEnd_toEndOf="@+id/tv_history"
+            app:layout_constraintStart_toStartOf="@+id/tv_history"
+            app:layout_constraintTop_toBottomOf="@+id/sep"
+            tools:itemCount="3"
+            tools:listitem="@layout/single_purchae_history_item" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_no_data_found"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:gravity="center"
+            android:text="No Data Found!"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/white_bg"
+            app:layout_constraintEnd_toEndOf="@+id/white_bg"
+            app:layout_constraintStart_toStartOf="@+id/white_bg"
+            app:layout_constraintTop_toBottomOf="@+id/tv_history" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

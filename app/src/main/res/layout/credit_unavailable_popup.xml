@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/dialog_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="@dimen/dimen_30"
+            android:layout_marginVertical="@dimen/dimen_20"
+            android:elevation="@dimen/dimen_3"
+            app:cardCornerRadius="@dimen/dimen_10">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:paddingHorizontal="@dimen/dimen_15"
+                android:paddingVertical="@dimen/dimen_20">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_cross" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="Choose an Option"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_sub_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dimen_15"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="@string/less_balance"
+                    android:textColor="#CC000000"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_heading" />
+
+                <CheckBox
+                    android:id="@+id/cb_purchase_a_package"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:button="@drawable/custom_checkbox"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text=" Purchase a Package"
+                    android:textColor="@color/black"
+                    android:theme="@style/RadioButtonStyle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_sub_heading" />
+
+                <CheckBox
+                    android:id="@+id/cb_add_another_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:button="@drawable/custom_checkbox"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text=" Add another item"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    android:theme="@style/RadioButtonStyle"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_purchase_a_package" />
+
+                <CheckBox
+                    android:id="@+id/cb_topup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:button="@drawable/custom_checkbox"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text=" Pay remaining balance"
+                    android:textColor="@color/black"
+                    android:theme="@style/RadioButtonStyle"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_add_another_item" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+
+</layout>

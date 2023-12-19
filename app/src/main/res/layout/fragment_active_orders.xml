@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pull_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_sort_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:drawableStart="@drawable/ic_filters"
+                android:drawablePadding="@dimen/dimen_15"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:gravity="start"
+                android:paddingVertical="@dimen/dimen_15"
+                android:visibility="gone"
+                android:text="@string/sort_by_all"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_orders"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sort_by"
+                tools:itemCount="10"
+                tools:listitem="@layout/single_order_item"
+                />
+
+            <ProgressBar
+                android:id="@+id/pb_loader"
+                android:layout_width="@dimen/dimen_50"
+                android:layout_height="@dimen/dimen_50"
+                android:indeterminateOnly="true"
+                android:indeterminateTint="@color/appColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_no_order"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_no_orders"
+                android:textSize="@dimen/dimen_20"
+                android:visibility="gone"
+                android:drawableTint="@color/ingredientColor"
+                android:layout_marginHorizontal="@dimen/dimen_10"
+                android:text="No Orders Found!"
+                android:drawablePadding="@dimen/dimen_10"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:textColor="@color/ingredientColor"
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

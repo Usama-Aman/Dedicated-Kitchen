@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="source"
+            type="com.codingpixel.dedicatekitchen.models.local.AccountSubSectionItem" />
+
+        <variable
+            name="position"
+            type="int" />
+
+        <variable
+            name="totalSize"
+            type="int" />
+
+        <variable
+            name="adapter"
+            type="com.codingpixel.dedicatekitchen.adapters.local.AccountSubSectionsAdapter" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_10">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_start_icon"
+            android:layout_width="@dimen/dimen_25"
+            android:layout_height="@dimen/dimen_25"
+            android:padding="@dimen/dimen_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sub_section_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@{source.title}"
+            android:textColor="@color/darkGrayTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_end_icon"
+            app:layout_constraintStart_toEndOf="@+id/iv_start_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sub_section_sub_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@{source.subTitle}"
+            android:textColor="@color/lightGraySubTitleColor"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_end_icon"
+            app:layout_constraintStart_toEndOf="@+id/iv_start_icon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sub_section_title" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:background="@color/separatorColor"
+            android:visibility="@{position == totalSize - 1 ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sub_section_sub_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_end_icon"
+            android:layout_width="@dimen/dimen_25"
+            android:layout_height="@dimen/dimen_25"
+            android:padding="@dimen/dimen_5"
+            android:visibility="@{source.showNextArrow ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_next_arrow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/iv_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_5"
+            android:text="Add Credit"
+            android:textColor="#FF9A56"
+            android:visibility="@{source.showTv ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{source.checked ? true : false}"
+            android:visibility="@{source.showSwitch ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{()-> adapter.itemTapped(source.sectionIndex, position)}"
+            app:layout_constraintBottom_toBottomOf="@+id/separator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
